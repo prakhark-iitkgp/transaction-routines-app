@@ -25,7 +25,7 @@ public class AccountService {
         return accountRepository.save(new AccountEntity(accountDto.getDocumentNumber()));
     }
 
-    public Account getAccount(String accountId) throws AccountNotFoundException {
+    public Account getAccount(Long accountId) throws AccountNotFoundException {
         Optional<AccountEntity> accountEntity = accountRepository.findByAccountId(accountId);
         Account account = new Account();
 

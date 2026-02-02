@@ -4,13 +4,13 @@ public class ServiceResponse {
 
     private String message;
 
-    private Integer responseCode;
+    private Boolean success;
 
     private Object body;
 
-    public ServiceResponse(String message, Integer responseCode, Object body) {
+    public ServiceResponse(String message, Boolean success, Object body) {
         this.message = message;
-        this.responseCode = responseCode;
+        this.success = success;
         this.body = body;
     }
 
@@ -22,12 +22,12 @@ public class ServiceResponse {
         this.message = message;
     }
 
-    public Integer getResponseCode() {
-        return responseCode;
+    public Boolean getSuccess() {
+        return success;
     }
 
-    public void setResponseCode(Integer responseCode) {
-        this.responseCode = responseCode;
+    public void setSuccess(Boolean success) {
+        this.success = success;
     }
 
     public Object getBody() {

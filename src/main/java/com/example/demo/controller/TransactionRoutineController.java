@@ -23,21 +23,21 @@ public class TransactionRoutineController {
     }
 
     @GetMapping("/accounts/{accountId}")
-    public ResponseEntity<ServiceResponse> getAccountDetails(@PathVariable String accountId) throws AccountNotFoundException {
+    public ResponseEntity<ServiceResponse> getAccountDetails(@PathVariable Long accountId) throws AccountNotFoundException {
 
-        return ResponseEntity.ok(new ServiceResponse(HttpStatus.OK.name(), HttpStatus.OK.value(),
+        return ResponseEntity.ok(new ServiceResponse(HttpStatus.OK.name(), true,
                 accountService.getAccount(accountId)));
     }
 
     @PostMapping("/accounts")
     public ResponseEntity<ServiceResponse> createAccount(@RequestBody CreateAccountRequestDto request){
-        return ResponseEntity.ok(new ServiceResponse(HttpStatus.OK.name(), HttpStatus.OK.value(),
+        return ResponseEntity.ok(new ServiceResponse(HttpStatus.OK.name(), true,
                 accountService.createAccount(request)));
     }
 
     @PostMapping("/transactions")
     public ResponseEntity<ServiceResponse> createTransaction(@RequestBody CreateTransactionRequestDto request){
-        return  ResponseEntity.ok(new ServiceResponse(HttpStatus.OK.name(), HttpStatus.OK.value(),
+        return  ResponseEntity.ok(new ServiceResponse(HttpStatus.OK.name(), true,
                 transactionService.createTransaction(request)));
     }
 
