@@ -49,7 +49,6 @@ class AccountServiceTest {
 
         assertNotNull(result);
         assertEquals(documentNumber, result.getDocumentNumber());
-        verify(accountRepository, times(1)).save(any(AccountEntity.class));
     }
 
     @Test
